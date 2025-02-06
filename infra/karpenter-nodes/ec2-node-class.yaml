@@ -8,6 +8,7 @@ spec:
     - alias: bottlerocket@1.26.1
   metadataOptions:
     httpPutResponseHopLimit: 2
+  role: Karpenter-eks-sandbox-20250206104043956900000016
   securityGroupSelectorTerms:
     - tags:
         karpenter.sh/discovery: eks-sandbox
