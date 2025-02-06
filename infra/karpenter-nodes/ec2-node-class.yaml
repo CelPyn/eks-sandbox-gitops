@@ -1,0 +1,17 @@
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: default
+spec:
+  amiFamily: Bottlerocket
+  amiSelectorTerms:
+    - alias: bottlerocket@1.26.1
+  metadataOptions:
+    httpPutResponseHopLimit: 2
+  securityGroupSelectorTerms:
+    - tags:
+        karpenter.sh/discovery: eks-sandbox
+  subnetSelectorTerms:
+    - id: subnet-0744e31c2eb7eb009
+    - id: subnet-0c892975aa4fb6ca1
+    - id: subnet-0eed41c14a1fc31c0
