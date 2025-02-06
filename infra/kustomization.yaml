@@ -3,4 +3,4 @@ kind: Kustomization
 
 resources:
   - karpenter.yaml
-#  - karpenter-nodes.yaml
+  - karpenter-nodes.yaml
