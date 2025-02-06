@@ -5,3 +5,17 @@ resources:
   - argo-rollouts.yaml
   - karpenter.yaml
   - karpenter-nodes.yaml
+
+patches:
+  - target:
+      kind: Application
+    patch: |-
+      - op: add
+        path: /metadata/finalizers
+        value: [ resources-finalizer.argocd.argoproj.io ]
+  - target:
+      kind: AppProject
+    patch: |-
+      - op: add
+        path: /metadata/finalizers
+        value: [ resources-finalizer.argocd.argoproj.io ]

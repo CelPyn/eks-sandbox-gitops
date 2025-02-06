@@ -4,3 +4,17 @@ kind: Kustomization
 resources:
 - nginx.yaml
 - rollout-demo-basic.yaml
+
+patches:
+  - target:
+      kind: Application
+    patch: |-
+      - op: add
+        path: /metadata/finalizers
+        value: [ resources-finalizer.argocd.argoproj.io ]
+  - target:
+      kind: AppProject
+    patch: |-
+      - op: add
+        path: /metadata/finalizers
+        value: [ resources-finalizer.argocd.argoproj.io ]
