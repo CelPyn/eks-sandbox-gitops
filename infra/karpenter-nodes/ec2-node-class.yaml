@@ -5,7 +5,7 @@ metadata:
 spec:
   amiFamily: Bottlerocket
   amiSelectorTerms:
-    - alias: bottlerocket@1.26.1
+    - alias: bottlerocket@1.32.0
   metadataOptions:
     httpPutResponseHopLimit: 2
   role: Karpenter-eks-sandbox-20250206104043956900000016
